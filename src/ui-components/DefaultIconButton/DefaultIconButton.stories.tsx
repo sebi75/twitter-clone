@@ -11,9 +11,12 @@ export default {
   args: {
     onClick: action("button clicked"),
     icon: <CgNotes width="25px" height="25px" />,
+    tooltipText: "Twitter"
   },
 } as ComponentMeta<typeof DefaultIconButton>;
 
 export const UiDefaultIconButtin: ComponentStory<typeof DefaultIconButton> = (
   args: IDefaultIconButtonProps
-) => <DefaultIconButton {...args}>{"Twitter"}</DefaultIconButton>;
+) => <div className="absolute top-8 left-8">
+    <DefaultIconButton {...args}>{"Twitter"}</DefaultIconButton>
+</div>;

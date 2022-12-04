@@ -1,2 +1,6 @@
-export { Button } from './DefaultButton'
-export type { IButtonProps } from './DefaultButton'
+export { DefaultButton } from './DefaultButton'
+export type { IDefaultButtonProps } from './DefaultButton'
+
+export { DefaultIconButton } from './DefaultIconButton'
+export type { IDefaultIconButtonProps } from './DefaultIconButton'
+
