@@ -5,7 +5,7 @@ import { clsx } from 'clsx'
 
 interface IButtonProps {
     className?: string;
-    children: ReactNode
+    children?: ReactNode
 }
 
 export const Button: FunctionComponent<IButtonProps> = ({ className, children }) => {
