@@ -1,5 +1,5 @@
-import type { ChangeEvent} from 'react';
-import { useState, useEffect } from 'react';
+import type { ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 // import { signIn, signOut, useSession } from "next-auth/react";
@@ -14,29 +14,29 @@ const Home: NextPage = () => {
 
   const fetchTest = async () => {
     try {
-      const reqURL = `http://localhost:3000/api/example/${param}`
-      console.log("calling endpoint: ", reqURL)
+      const reqURL = `http://localhost:3000/api/example/${param}`;
+      console.log("calling endpoint: ", reqURL);
       const res = await fetch(reqURL, {
-        method: isRadio === 1 ? "GET" : "POST"
-      })
-      console.log(res.json())
+        method: isRadio === 1 ? "GET" : "POST",
+      });
+      console.log(res.json());
     } catch (error) {
-      console.log("catched in trycarch")
+      console.log("catched in trycarch");
     }
-  }
+  };
 
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsRadio(+event.currentTarget.value);
-  }
+  };
 
   const handleParamChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
     if (input) {
       setParam(input);
     }
-  }
+  };
 
-  console.log(isRadio === 1 ? "GET" : "POST")
+  console.log(isRadio === 1 ? "GET" : "POST");
 
   return (
     <>
@@ -47,26 +47,38 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1>{hello.data?.greeting}</h1>
-        <input type="text" placeholder='enter query param' onChange={handleParamChange} />
+        <input
+          type="text"
+          placeholder="enter query param"
+          onChange={handleParamChange}
+        />
         <ul>
           <li>
-            <input type="radio" value="1" id="GET" checked={isRadio === 1} onChange={handleRadioChange} />
-            <label htmlFor='1'>GET</label>
+            <input
+              type="radio"
+              value="1"
+              id="GET"
+              checked={isRadio === 1}
+              onChange={handleRadioChange}
+            />
+            <label htmlFor="1">GET</label>
           </li>
           <li>
-          <input type="radio" value="2" id="POST" checked={isRadio === 2} onChange={handleRadioChange} />
-          <label htmlFor='2'>POST</label>
+            <input
+              type="radio"
+              value="2"
+              id="POST"
+              checked={isRadio === 2}
+              onChange={handleRadioChange}
+            />
+            <label htmlFor="2">POST</label>
           </li>
         </ul>
         <button onClick={fetchTest}>fetch</button>
 
         <div>
           {isLoading && <p>creating one example...</p>}
-          {data && (
-            <p>
-              {JSON.stringify(data)}
-            </p>
-          )}
+          {data && <p>{JSON.stringify(data)}</p>}
         </div>
       </main>
     </>
