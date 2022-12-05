@@ -7,15 +7,20 @@ import {
   IconVariantEnum,
   IconVariantToComponent,
 } from "./menuData";
-import { DefaultButton } from "../";
+import { DefaultButton, NavbarProfileCard } from "../";
 
 export interface ILeftNavbarProps {
   showSomething: boolean;
 }
 
 export const LeftNavbar: FunctionComponent<ILeftNavbarProps> = () => {
+  const mockFullname = "Sebastian Semeniuc";
+  const mockUsername = "@sebyss7";
+  const mockProfilePicture =
+    "https://pbs.twimg.com/profile_images/1456596901504094208/k3gqJ2e5_400x400.jpg";
+
   return (
-    <div className="fixed flex h-screen max-w-[25%] flex-col justify-between">
+    <div className="fixed flex h-screen max-w-[40%] flex-col justify-between">
       <div className="flex flex-col justify-center">
         {leftBarData.map((item) => {
           const Icon = IconVariantToComponent[item.icon];
@@ -50,7 +55,11 @@ export const LeftNavbar: FunctionComponent<ILeftNavbarProps> = () => {
       </div>
 
       <div className="relative bottom-5">
-        <h1>ProfileCardComponent</h1>
+        <NavbarProfileCard
+          fullName={mockFullname}
+          profilePicture={mockProfilePicture}
+          username={mockUsername}
+        />
       </div>
     </div>
   );
