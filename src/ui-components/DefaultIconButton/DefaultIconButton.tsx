@@ -14,8 +14,9 @@ export interface IDefaultIconButtonProps
     HTMLButtonElement
   > {
   icon: ReactNode;
-  children?: ReactNode;
   className?: string;
+  children?: ReactNode;
+  blueThemed?: boolean;
   tooltipText?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -24,6 +25,7 @@ export const DefaultIconButton: FunctionComponent<IDefaultIconButtonProps> = ({
   icon,
   children,
   className,
+  blueThemed,
   tooltipText,
   ...rest
 }) => {
@@ -33,7 +35,9 @@ export const DefaultIconButton: FunctionComponent<IDefaultIconButtonProps> = ({
         {...rest}
         className={clsx(
           className,
-          "flex flex-row items-center justify-center rounded-full p-4 text-xl transition-all duration-200 hover:bg-opacity-shadow"
+          `flex flex-row items-center justify-center rounded-full p-4 text-xl transition-all duration-200 ${
+            blueThemed ? "hover:bg-primary-opacity" : "hover:bg-opacity-shadow"
+          }`
         )}
       >
         <span

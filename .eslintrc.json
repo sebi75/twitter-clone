@@ -5,6 +5,23 @@
   },
   "plugins": ["@typescript-eslint"],
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "settings": {
+        "react": { "version": "detect"},
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"]
+        }
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/recommended"
+      ]
+    }
+  ],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "warn"
   }

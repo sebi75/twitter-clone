@@ -1,3 +1,4 @@
+import React from "react";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { DefaultIconButton } from "./DefaultIconButton";
@@ -11,12 +12,14 @@ export default {
   args: {
     onClick: action("button clicked"),
     icon: <CgNotes width="25px" height="25px" />,
-    tooltipText: "Twitter"
+    tooltipText: "Twitter",
   },
 } as ComponentMeta<typeof DefaultIconButton>;
 
 export const UiDefaultIconButtin: ComponentStory<typeof DefaultIconButton> = (
   args: IDefaultIconButtonProps
-) => <div className="absolute top-8 left-8">
+) => (
+  <div className="absolute top-8 left-8">
     <DefaultIconButton {...args}>{"Twitter"}</DefaultIconButton>
-</div>;
+  </div>
+);
