@@ -1,5 +1,6 @@
+import React from "react";
 import type { ChangeEvent } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 // import { signIn, signOut, useSession } from "next-auth/react";
