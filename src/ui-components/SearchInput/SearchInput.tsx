@@ -24,11 +24,11 @@ export const SearchInput: FunctionComponent<ISearchInputProps> = ({
     }
   };
 
-  const handleOutsideClick = useCallback((e: any) => {
+  const handleOutsideClick = (e: any) => {
     if (!elementRef.current?.contains(e.target)) {
       setHasElementFocus(false);
     }
-  }, []);
+  };
 
   return (
     <div
@@ -36,7 +36,7 @@ export const SearchInput: FunctionComponent<ISearchInputProps> = ({
         hasElementFocus
           ? "border border-primary bg-white"
           : "border border-transparent bg-primary-light-opacity"
-      }`}
+      } transition-all duration-200`}
       onClick={handleElementClick}
       ref={elementRef}
     >

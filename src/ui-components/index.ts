@@ -14,3 +14,5 @@ export { MainLayout } from './Layouts'
 export type { IMainLayoutProps } from './Layouts'
 
 export { RightNavbar } from './RightNavbar'
+
+export { SearchInput } from './SearchInput'

@@ -1,0 +1,1 @@
+export { TweetCardFooter } from './TweetCardFooter'
